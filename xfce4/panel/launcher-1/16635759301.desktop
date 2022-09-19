@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=XaoS
+GenericName=Fractal generator
+Comment=Realtime fractal zoomer
+Exec=xaos
+Icon=xaos
+Terminal=false
+Type=Application
+Categories=Education;Science;Math;
+X-XFCE-Source=file:///usr/share/applications/xaos.desktop

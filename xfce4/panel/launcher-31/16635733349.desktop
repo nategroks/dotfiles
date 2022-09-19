@@ -1,0 +1,9 @@
+[Desktop Entry]
+Exec=xscreensaver-settings
+Icon=xscreensaver
+Terminal=false
+Name=XScreenSaver
+Comment=Change XScreenSaver properties
+Type=Application
+Categories=Settings;DesktopSettings;Security;X-XFCE;
+X-XFCE-Source=file:///usr/share/applications/xscreensaver-properties.desktop

@@ -1,0 +1,106 @@
+# this file goes in ~
+
+
+background true
+use_xft true
+xftfont 3270Medium Nerd Font:bold:pixelsize=13
+xftalpha 1
+update_interval 1
+total_run_times 0
+own_window true
+own_window_type override
+own_window_transparent true
+double_buffer yes
+draw_shades no
+draw_outline yes
+draw_borders no
+draw_graph_borders yes
+stippled_borders 0
+border_width 2
+default_color d8dee9
+default_shade_color black
+default_outline_color black
+alignment top_left
+gap_x 1510
+gap_y -50
+no_buffers yes
+cpu_avg_samples 2
+net_avg_samples 2
+override_utf8_locale yes
+use_spacer none
+text_buffer_size 16000
+
+maximum_width 700
+minimum_size 420 0
+
+#color  d8dee9 
+color1 B48EAD
+color2 A3BE8C
+color3 8FBCBB
+color4 ECEFF4
+color5 ebcb8b
+
+TEXT
+${alignr}${offset -25}${voffset -5}${font virtuality demo:size=115}${color3}gero${color1}.X${font}
+
+
+${alignr}${offset -10}└───────┐
+${alignr}${color5}${offset -10}$font │
+${alignr}${offset -10}$font ${nodename} -─┤
+
+
+
+${alignr}${offset -10}${color2}[${cpu 1}%]${color2} CPU1 | ${color2}[${color3}${color2}${cpu 2}%]${color3} CPU2 -─┤    │    │    │
+${alignr}${offset 10}$font ${color2}[${cpu 3}%]${color} CPU3 | ${color2}[${color3}${color2}${cpu 4}%]${color} CPU4 -─┘    │    │    │
+${alignr}${offset -10}$font │    │    │
+${alignr}${offset -10}$font freq -─┤    │    │
+${alignr}${offset -10}$font ${color1}[${color3} ${freq 1}mhz ${color1}]${color3} cpu1 -─┤    │    │    │
+${alignr}${offset -10}$font ${color1}[${color3} ${freq 2}mhz ${color1}]${color3} cpu2 -─┘    │    │    │
+${alignr}${offset -10}$font ${color1}[${color3} ${freq 3}mhz ${color1}]${color3} cpu3 -─┤    │    │    │
+${alignr}${offset -10}$font ${color1}[${color3} ${freq 4}mhz ${color1}]${color3} cpu4 -─┘    │    │    │
+${alignr}${offset -10}$font │    │    │
+${alignr}${offset -10}$font ${color1}[${color3} $loadavg ${color1}]${color} load -─┤    │    │
+${alignr}${offset -10}$font ${color2}[${color3} ${top name 1}  ${top cpu 1} ${color2}]${color} -─┤    │    │
+${alignr}${offset -10}$font ${color2}[${color3} ${top name 2}  ${top cpu 2} ${color2}]${color} -─┤    │    │
+${alignr}${offset -10}$font ${color2}[${color3} ${top name 3}  ${top cpu 3} ${color2}]${color} -─┤    │    │
+${alignr}${offset -10}$font ${color2}[${color3} ${top name 4}  ${top cpu 4} ${color2}]${color} -─┘    │    │
+${alignr}${offset -10}$font │    │
+${alignr}${offset -10}$font ram -─┤    │
+${alignr}${offset -10}$font ${color1}[${color3} $memperc% ${color1}]${color3} used -─┘    │    │
+${alignr}${offset -10}$font ${color1}[${color3} $mem/$memmax ${color1}]${color3} -─┘         │    │
+${alignr}${offset -10}$font │    │
+${alignr}${offset -10}$font processes -─┤    │
+${alignr}${offset -10}$font ${color1}[${color3} $processes ${color1}]${color}   total -─┤    │    │
+${alignr}${offset -10}$font ${color1}[${color3} $running_processes ${color1}]${color} running -─┘    │    │
+${alignr}${offset -10}$font │    │
+${alignr}${offset -10}$font temperature -─┤    │
+${alignr}${offset -10}$font ${color1}[${color3} ${exec sensors | grep -m 1 temp1 | cut -c 16-17} ${color1}]${color} tmp1 -─┘    │    │
+
+#${alignr${offset -10}}$font ${color1}[${color} ${if_match ${exec sensors | grep -m 1 temp1 | awk '{print $2}' | cut -c 2-3}>=65}${color2}${exec sensors | grep -m 1 temp1 | awk '{print $2}' | cut -c 2-3}${else}${color1}${exec sensors | grep -m 1 temp1 | awk '{print $2}' | cut -c 2-3}${endif}${color}${color} ${color1}]${color} tmp1 -─┘         │
+${alignr}${offset -10}$font │
+${alignr}${offset -10}$font resources -─┤
+${alignr}${offset -10}$font ${color1}[${color3} $diskio_read ${color1}]${color3}   read -─┤    │
+${alignr}${offset -10}$font ${color1}[${color3} $diskio_write ${color1}]${color3}  write -─┤    │
+${alignr}${offset -10}$font │    │    │
+${alignr}${offset -10}$font ${color2}[${color3} ${top_mem name 1}  ${top_mem mem 1} ${color2}]${color} -─┤    │    │
+${alignr}${offset -10}$font ${color2}[${color3} ${top_mem name 2}  ${top_mem mem 2} ${color2}]${color} -─┤    │    │
+${alignr}${offset -10}$font ${color2}[${color3} ${top_mem name 3}  ${top_mem mem 3} ${color2}]${color} -─┤    │    │
+${alignr}${offset -10}$font ${color2}[${color3} ${top_mem name 4}  ${top_mem mem 4} ${color2}]${color} -─┘    │    │
+${alignr}${offset -10}$font │    │
+${alignr}${offset -10}$font ${color1}[${color3} ${fs_used /boot} / ${fs_size /boot} ${color1}]${color} boot -─┤    │
+${alignr}${offset 5}$font ${color1}[${color3} ${fs_bar 5,120 /boot/} ${color1}]${color3} -─┘    │    │
+${alignr}${offset -10}$font │    │
+${alignr}${offset -10}$font ${color1}[${color3} $swapperc% - $swap/ $swapmax ${color1}]${color} swap -─┤    │
+${alignr}${offset 5}$font ${color1}[${color3} ${swapbar 5,120} ${color1}]${color3} -─┘    │    │
+${alignr}${offset -10}$font │    │
+${alignr}${offset -10}$font ${color1}[${color3} ${fs_used /} / ${fs_size /} ${color1}]${color} root -─┘    │
+${alignr}${offset 5}$font ${color1}[${color3} ${fs_bar 5,120 /} ${color1}]${color3} -─┘         │
+
+
+${alignr}${offset -10}$font net -─────────────────┘
+${if_match "${addr eth0}" != "No Address"}${alignr}${offset -10}${color1}[${color} ${addr eth0} ${color1}]${color}${else}${alignr}${offset -240}$font ${color1}[${color} ${color2}${addr eth0}${color} ${color1}]${color}${endif} ethernet ip -─┤
+
+${alignr}${offset -245}$font eth0
+${alignr}${offset -35}$font ${color1}[${color} ${upspeed eth0} ${color1}]${color}   up -─┤│├─- up   $font ${color1}${color} ${upspeedgraph eth0 10,120 ebcb8b 81a1c1} ${color1}${color}
+
+${alignr}${offset -35}$font ${color1}[${color} ${downspeed eth0} ${color1}]${color} down -─┘│└─- down $font ${color1}${color} ${downspeedgraph eth0 10,120 81a1c1 ebcb8b} ${color1}${color}

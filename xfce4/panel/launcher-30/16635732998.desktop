@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=KAlgebra
+GenericName=Graph Calculator
+Comment=Math Expression Solver and Plotter
+Exec=kalgebra %u
+MimeType=application/x-kalgebra;
+Icon=kalgebra
+Type=Application
+X-DocPath=kalgebra/index.html
+Terminal=false
+Categories=Qt;KDE;Education;Math;Science;
+X-DBUS-ServiceName=org.kde.kalgebra
+X-XFCE-Source=file:///usr/share/applications/org.kde.kalgebra.desktop

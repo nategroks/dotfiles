@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Terminal=false
+Exec=/usr/bin/dwarffortress
+Name=Dwarf Fortress
+Icon=dwarffortress
+X-XFCE-Source=file:///usr/share/applications/dwarffortress.desktop

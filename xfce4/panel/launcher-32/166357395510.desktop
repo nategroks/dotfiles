@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Ezra Bible App
+Comment=Ezra Bible App is a Bible study tool focussing on topical study based on keywords/tags
+GenericName=Bible Study Tool
+Exec=ezra-bible-app %U
+Icon=ezra-bible-app
+Type=Application
+StartupNotify=true
+Categories=Education;Spirituality;Literature;
+X-XFCE-Source=file:///usr/share/applications/ezra-bible-app.desktop

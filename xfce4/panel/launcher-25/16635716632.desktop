@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Sigil
+Comment=ePUB file editor
+TryExec=sigil
+Exec=sigil %F
+Icon=sigil
+Categories=Office;
+MimeType=application/epub+zip;
+X-XFCE-Source=file:///usr/share/applications/sigil.desktop
