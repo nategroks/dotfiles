@@ -6,19 +6,16 @@
     <value type="int" value="2"/>
     <property name="dark-mode" type="bool" value="true"/>
     <property name="panel-2" type="empty">
-      <property name="autohide-behavior" type="uint" value="2"/>
+      <property name="autohide-behavior" type="uint" value="0"/>
       <property name="position" type="string" value="p=6;x=898;y=21"/>
-      <property name="length" type="uint" value="1"/>
+      <property name="length" type="uint" value="88"/>
       <property name="position-locked" type="bool" value="true"/>
-      <property name="size" type="uint" value="32"/>
+      <property name="size" type="uint" value="28"/>
       <property name="plugin-ids" type="array">
         <value type="int" value="5"/>
         <value type="int" value="3"/>
-        <value type="int" value="24"/>
-        <value type="int" value="2"/>
         <value type="int" value="17"/>
         <value type="int" value="27"/>
-        <value type="int" value="31"/>
         <value type="int" value="30"/>
         <value type="int" value="29"/>
         <value type="int" value="28"/>
@@ -47,7 +44,7 @@
       <property name="span-monitors" type="bool" value="false"/>
       <property name="leave-opacity" type="uint" value="94"/>
       <property name="enter-opacity" type="uint" value="100"/>
-      <property name="icon-size" type="uint" value="17"/>
+      <property name="icon-size" type="uint" value="0"/>
       <property name="length-adjust" type="bool" value="true"/>
       <property name="mode" type="uint" value="0"/>
     </property>
@@ -67,11 +64,6 @@
     <property name="plugin-19" type="string" value="weather"/>
     <property name="plugin-22" type="string" value="directorymenu">
       <property name="base-directory" type="string" value="/home/gero"/>
-    </property>
-    <property name="plugin-24" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="16635716461.desktop"/>
-      </property>
     </property>
     <property name="plugin-25" type="string" value="launcher">
       <property name="items" type="array">
@@ -118,11 +110,6 @@
         <value type="string" value="16635732998.desktop"/>
       </property>
     </property>
-    <property name="plugin-31" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="16635733349.desktop"/>
-      </property>
-    </property>
     <property name="plugin-32" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="166357395510.desktop"/>
@@ -131,6 +118,7 @@
     <property name="plugin-5" type="string" value="applicationsmenu">
       <property name="button-icon" type="string" value="/home/gero/Pictures/icons/icons8-martian-128.png"/>
       <property name="button-title" type="string" value="Home."/>
+      <property name="show-button-title" type="bool" value="false"/>
     </property>
     <property name="plugin-6" type="string" value="clock">
       <property name="mode" type="uint" value="3"/>
@@ -140,17 +128,29 @@
     <property name="plugin-8" type="string" value="notification-plugin"/>
     <property name="plugin-9" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="chromium.instance2101;firefox.instance25657"/>
+      <property name="mpris-players" type="string" value="chromium.instance10976;chromium.instance11300;chromium.instance11704;chromium.instance11913;chromium.instance12044;chromium.instance14179;chromium.instance1501;chromium.instance1503;chromium.instance1518;chromium.instance1595;chromium.instance1628;chromium.instance16431;chromium.instance16730;chromium.instance18265;chromium.instance18271;chromium.instance2101;chromium.instance2348;chromium.instance23875;chromium.instance2499;chromium.instance2568;chromium.instance26221;chromium.instance26357;chromium.instance28361;chromium.instance29541;chromium.instance29996;chromium.instance30782;chromium.instance3095;chromium.instance32048;chromium.instance32069;chromium.instance3620;chromium.instance5097;chromium.instance5139;chromium.instance5245;chromium.instance5479;chromium.instance7756;chromium.instance8212;chromium.instance8738;chromium.instance9498;chromium.instance9591;clementine;elisa;firefox.instance10127;firefox.instance25657;firefox.instance26902;firefox.instance27418;firefox.instance32208;firefox.instance654;firefox.instance6771;plasma-browser-integration;plasma-browser-integration-5681;spotify"/>
     </property>
     <property name="plugin-10" type="string" value="systemload"/>
     <property name="plugin-11" type="string" value="screenshooter"/>
     <property name="plugin-12" type="string" value="systray">
       <property name="known-legacy-items" type="array">
+        <value type="string" value="kteatime"/>
+        <value type="string" value="workrave"/>
+        <value type="string" value="synergy"/>
+        <value type="string" value="teams"/>
         <value type="string" value="thunar"/>
         <value type="string" value="remmina"/>
         <value type="string" value="networkmanager applet"/>
       </property>
       <property name="known-items" type="array">
+        <value type="string" value="azote_status_icon"/>
+        <value type="string" value="KTimer"/>
+        <value type="string" value="kteatime"/>
+        <value type="string" value="Kiten"/>
+        <value type="string" value="Clementine"/>
+        <value type="string" value="flameshot"/>
+        <value type="string" value="Synergy"/>
+        <value type="string" value="KTorrent"/>
         <value type="string" value="Microsoft Teams - Preview1"/>
         <value type="string" value="remmina-icon"/>
       </property>
@@ -159,11 +159,6 @@
     <property name="plugin-1" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="16635759301.desktop"/>
-      </property>
-    </property>
-    <property name="plugin-2" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="16635997401.desktop"/>
       </property>
     </property>
     <property name="plugin-3" type="string" value="launcher">

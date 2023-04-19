@@ -147,7 +147,7 @@
         <property name="workspace0" type="empty">
           <property name="color-style" type="int" value="0"/>
           <property name="image-style" type="int" value="6"/>
-          <property name="last-image" type="string" value="/home/gero/Pictures/wallhaven-ym1oz7.jpg"/>
+          <property name="last-image" type="string" value="/home/gero/Pictures/216021.jpg"/>
           <property name="backdrop-cycle-enable" type="bool" value="true"/>
           <property name="backdrop-cycle-period" type="int" value="3"/>
           <property name="backdrop-cycle-random-order" type="bool" value="false"/>
@@ -155,7 +155,8 @@
         <property name="workspace1" type="empty">
           <property name="color-style" type="int" value="0"/>
           <property name="image-style" type="int" value="6"/>
-          <property name="last-image" type="string" value="/home/gero/Pictures/space.jpg"/>
+          <property name="last-image" type="string" value="/home/gero/Pictures/216021.jpg"/>
+          <property name="backdrop-cycle-enable" type="bool" value="false"/>
         </property>
         <property name="workspace2" type="empty">
           <property name="color-style" type="int" value="0"/>
@@ -195,11 +196,11 @@
       </property>
     </property>
     <property name="single-workspace-mode" type="bool" value="false"/>
-    <property name="single-workspace-number" type="int" value="0"/>
+    <property name="single-workspace-number" type="int" value="1"/>
   </property>
   <property name="last" type="empty">
-    <property name="window-width" type="int" value="911"/>
-    <property name="window-height" type="int" value="982"/>
+    <property name="window-width" type="int" value="1838"/>
+    <property name="window-height" type="int" value="972"/>
   </property>
   <property name="windowlist-menu" type="empty">
     <property name="show-submenus" type="bool" value="false"/>
