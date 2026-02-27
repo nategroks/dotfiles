@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memphis Twilight — SpaceHey Theme Preview</title>
+
+<!-- ============================================================
+     MEMPHIS TWILIGHT — a moody SpaceHey theme
+     Late-80s Memphis design in hushed, muted tones
+     Bitmap font  +  falling pixel creatures & stars
+
+     HOW TO USE:
+     Copy everything inside the <style id="spacehey-theme"> tag
+     and paste it into SpaceHey > Edit Profile > Customize > CSS
+     ============================================================ -->
+
+<style id="spacehey-theme">
+/*
+ * MEMPHIS TWILIGHT — a moody SpaceHey theme
+ * Late-80s Memphis design in hushed, muted tones
+ * Bitmap font  +  falling pixel creatures & stars
+ *
+ * Paste this into SpaceHey > Edit Profile > Customize Profile > CSS
+ */
+
+/* ===================================================================
+   0. BITMAP FONT (Press Start 2P from Google Fonts)
+   =================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* ===================================================================
+   1. PALETTE  (muted Memphis dusk)
+   =================================================================== */
+:root {
+  --dust-rose:     #9e7b7b;
+  --faded-coral:   #b08070;
+  --muted-teal:    #6b8f8f;
+  --sage:          #7a8f6e;
+  --soft-lavender: #8a7a9e;
+  --warm-gray:     #5c5556;
+  --deep-bg:       #1e1a1d;
+  --panel-bg:      #2a2428;
+  --panel-border:  #3d3538;
+  --text-dim:      #c2b4a8;
+  --text-bright:   #e0d5cb;
+  --accent-yellow: #b5a86a;
+  --accent-blue:   #6a7fb5;
+  --link-color:    #8a9db5;
+  --link-hover:    #b08070;
+}
+
+/* ===================================================================
+   2. BASE  — dark moody ground
+   =================================================================== */
+body {
+  background-color: var(--deep-bg) !important;
+  color: var(--text-dim) !important;
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: 8px !important;
+  line-height: 1.8 !important;
+  image-rendering: pixelated !important;
+}
+
+/* Memphis geometric pattern overlay on body */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image:
+    linear-gradient(60deg,  transparent 46%, var(--dust-rose) 46%, var(--dust-rose) 54%, transparent 54%),
+    linear-gradient(120deg, transparent 46%, var(--muted-teal) 46%, var(--muted-teal) 54%, transparent 54%),
+    radial-gradient(circle 2px, var(--soft-lavender) 100%, transparent 100%),
+    radial-gradient(circle 1.5px, var(--accent-yellow) 100%, transparent 100%);
+  background-size:
+    120px 120px,
+    90px 90px,
+    60px 60px,
+    45px 45px;
+  background-position:
+    0 0,
+    30px 40px,
+    15px 15px,
+    50px 35px;
+}
+
+/* ===================================================================
+   3. FALLING PIXEL CREATURES & STARS  (pure CSS animation)
+   =================================================================== */
+body::after {
+  content: '';
+  position: fixed;
+  top: -200px;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 200px);
+  z-index: 9999;
+  pointer-events: none;
+  animation: memphis-fall 28s linear infinite;
+  opacity: 0.55;
+  box-shadow:
+    /* --- stars (single pixels, scattered) --- */
+     40px   60px  0 0 var(--accent-yellow),
+    155px   30px  0 0 var(--dust-rose),
+    280px   90px  0 0 var(--muted-teal),
+    390px   10px  0 0 var(--soft-lavender),
+    520px   70px  0 0 var(--accent-blue),
+    640px   40px  0 0 var(--faded-coral),
+    780px   85px  0 0 var(--sage),
+    910px   25px  0 0 var(--accent-yellow),
+   1040px   55px  0 0 var(--dust-rose),
+   1170px   95px  0 0 var(--muted-teal),
+
+    /* --- row 2 stars --- */
+     70px  160px  0 0 var(--sage),
+    200px  180px  0 0 var(--accent-blue),
+    350px  140px  0 0 var(--faded-coral),
+    480px  190px  0 0 var(--accent-yellow),
+    610px  150px  0 0 var(--soft-lavender),
+    750px  170px  0 0 var(--dust-rose),
+    880px  130px  0 0 var(--muted-teal),
+   1010px  185px  0 0 var(--sage),
+
+    /* creature 1: little ghost */
+    100px  110px  0 0 var(--soft-lavender),
+    102px  110px  0 0 var(--soft-lavender),
+    101px  108px  0 0 var(--soft-lavender),
+    100px  112px  0 0 var(--soft-lavender),
+    102px  112px  0 0 var(--soft-lavender),
+
+    /* creature 2: tiny triangle critter */
+    300px  50px  0 0 var(--faded-coral),
+    301px  48px  0 0 var(--faded-coral),
+    302px  50px  0 0 var(--faded-coral),
+    300px  52px  0 0 var(--faded-coral),
+    302px  52px  0 0 var(--faded-coral),
+    301px  52px  0 0 var(--faded-coral),
+
+    /* creature 3: pixel bug */
+    560px  80px  0 0 var(--muted-teal),
+    562px  80px  0 0 var(--muted-teal),
+    561px  78px  0 0 var(--accent-yellow),
+    560px  82px  0 0 var(--muted-teal),
+    562px  82px  0 0 var(--muted-teal),
+
+    /* creature 4: little blob */
+    730px  120px  0 0 var(--dust-rose),
+    732px  120px  0 0 var(--dust-rose),
+    731px  118px  0 0 var(--dust-rose),
+    731px  122px  0 0 var(--dust-rose),
+
+    /* creature 5: diamond critter */
+    440px  160px  0 0 var(--accent-blue),
+    441px  158px  0 0 var(--accent-blue),
+    442px  160px  0 0 var(--accent-blue),
+    441px  162px  0 0 var(--accent-blue),
+
+    /* creature 6: tiny invader */
+    860px  60px  0 0 var(--sage),
+    862px  60px  0 0 var(--sage),
+    858px  60px  0 0 var(--sage),
+    859px  58px  0 0 var(--sage),
+    861px  58px  0 0 var(--sage),
+    860px  62px  0 0 var(--sage),
+
+    /* creature 7: star-shaped critter */
+    170px  190px  0 0 var(--accent-yellow),
+    172px  190px  0 0 var(--accent-yellow),
+    171px  188px  0 0 var(--accent-yellow),
+    171px  192px  0 0 var(--accent-yellow),
+    169px  190px  0 0 var(--accent-yellow),
+    173px  190px  0 0 var(--accent-yellow),
+
+    /* creature 8: little worm */
+    950px  145px  0 0 var(--faded-coral),
+    952px  145px  0 0 var(--faded-coral),
+    954px  147px  0 0 var(--faded-coral),
+    956px  147px  0 0 var(--faded-coral),
+
+    /* fill stars */
+     25px  200px  0 0 var(--accent-yellow),
+    500px  205px  0 0 var(--muted-teal),
+    680px  210px  0 0 var(--soft-lavender),
+   1100px  195px  0 0 var(--faded-coral),
+    240px  215px  0 0 var(--sage);
+}
+
+@keyframes memphis-fall {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(calc(100vh + 200px)); }
+}
+
+/* Second layer — offset timing for depth */
+.header::after {
+  content: '';
+  position: fixed;
+  top: -300px;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 300px);
+  z-index: 9998;
+  pointer-events: none;
+  animation: memphis-fall-slow 42s linear infinite;
+  animation-delay: -14s;
+  opacity: 0.3;
+  box-shadow:
+     80px   40px 0 0 var(--dust-rose),
+    210px   80px 0 0 var(--accent-yellow),
+    370px   20px 0 0 var(--soft-lavender),
+    500px   65px 0 0 var(--sage),
+    660px   35px 0 0 var(--muted-teal),
+    800px   90px 0 0 var(--faded-coral),
+    940px   50px 0 0 var(--accent-blue),
+   1080px   75px 0 0 var(--dust-rose),
+
+    /* slow creatures */
+    130px  100px 0 0 var(--accent-blue),
+    132px  100px 0 0 var(--accent-blue),
+    131px   98px 0 0 var(--accent-blue),
+    131px  102px 0 0 var(--accent-blue),
+
+    420px  110px 0 0 var(--sage),
+    422px  110px 0 0 var(--sage),
+    421px  108px 0 0 var(--accent-yellow),
+    420px  112px 0 0 var(--sage),
+    422px  112px 0 0 var(--sage),
+
+    720px  130px 0 0 var(--dust-rose),
+    722px  130px 0 0 var(--dust-rose),
+    724px  132px 0 0 var(--dust-rose),
+    726px  132px 0 0 var(--dust-rose);
+}
+
+@keyframes memphis-fall-slow {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(calc(100vh + 300px)); }
+}
+
+/* ===================================================================
+   4. NAVIGATION / TOP BAR
+   =================================================================== */
+nav,
+.top-bar,
+.header {
+  background: var(--panel-bg) !important;
+  border-bottom: 2px solid var(--panel-border) !important;
+  font-family: 'Press Start 2P', monospace !important;
+}
+
+nav a,
+.top-bar a,
+.header a {
+  color: var(--text-dim) !important;
+  text-decoration: none !important;
+  font-size: 8px !important;
+  transition: color 0.2s ease;
+}
+
+nav a:hover,
+.top-bar a:hover,
+.header a:hover {
+  color: var(--faded-coral) !important;
+}
+
+/* ===================================================================
+   5. MAIN CONTENT / PROFILE AREA
+   =================================================================== */
+.profile,
+.blurbs,
+.friends,
+.comments,
+.blog-entry,
+.bulletin,
+.group {
+  position: relative;
+  z-index: 1;
+}
+
+.heading,
+.profile .url-info,
+.profile .contact,
+.profile .table-section,
+.blurbs .heading,
+.friends .heading,
+.comments .heading {
+  background: var(--panel-bg) !important;
+  border: 1px solid var(--panel-border) !important;
+  color: var(--text-bright) !important;
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: 8px !important;
+  padding: 8px 10px !important;
+}
+
+.profile .general-about,
+.profile .details .table-section,
+.profile .blurbs .section,
+.friends .section,
+.comments .section,
+.blog-entry .entry-body,
+.bulletin .bulletin-body {
+  background: var(--panel-bg) !important;
+  border: 1px solid var(--panel-border) !important;
+  color: var(--text-dim) !important;
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: 8px !important;
+  line-height: 2 !important;
+}
+
+/* Memphis-style accent bar on section headings */
+.heading::before {
+  content: '';
+  display: block;
+  height: 3px;
+  margin-bottom: 6px;
+  background: linear-gradient(
+    90deg,
+    var(--dust-rose) 0%,
+    var(--muted-teal) 25%,
+    var(--soft-lavender) 50%,
+    var(--accent-yellow) 75%,
+    var(--faded-coral) 100%
+  );
+  opacity: 0.5;
+  image-rendering: pixelated;
+}
+
+/* ===================================================================
+   6. LINKS
+   =================================================================== */
+a {
+  color: var(--link-color) !important;
+  text-decoration: none !important;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--link-hover) !important;
+  text-decoration: underline !important;
+}
+
+/* ===================================================================
+   7. PROFILE PIC  — Memphis-frame
+   =================================================================== */
+.profile-pic img,
+.profile-info .profile-pic img,
+.general-about .profile-pic img {
+  border: 3px solid var(--warm-gray) !important;
+  box-shadow:
+    4px 4px 0 0 var(--dust-rose),
+    -2px -2px 0 0 var(--muted-teal) !important;
+  image-rendering: pixelated !important;
+  filter: contrast(0.9) saturate(0.7) !important;
+}
+
+/* ===================================================================
+   8. BUTTONS & INPUTS
+   =================================================================== */
+button,
+input[type="submit"],
+.btn {
+  background: var(--warm-gray) !important;
+  color: var(--text-bright) !important;
+  border: 2px solid var(--panel-border) !important;
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: 7px !important;
+  padding: 6px 12px !important;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 2px 2px 0 0 rgba(0,0,0,0.3) !important;
+}
+
+button:hover,
+input[type="submit"]:hover,
+.btn:hover {
+  background: var(--dust-rose) !important;
+  box-shadow: 1px 1px 0 0 rgba(0,0,0,0.3) !important;
+  transform: translate(1px, 1px);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+  background: #1a1618 !important;
+  color: var(--text-dim) !important;
+  border: 2px solid var(--panel-border) !important;
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: 7px !important;
+  padding: 6px 8px !important;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--muted-teal) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 1px var(--muted-teal) !important;
+}
+
+/* ===================================================================
+   9. TABLES & DETAILS
+   =================================================================== */
+table,
+.profile .details table {
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: 7px !important;
+  color: var(--text-dim) !important;
+}
+
+td, th {
+  border-color: var(--panel-border) !important;
+  padding: 6px 8px !important;
+}
+
+/* ===================================================================
+  10. COMMENTS
+   =================================================================== */
+.comments-table td {
+  background: var(--panel-bg) !important;
+  border-bottom: 1px solid var(--panel-border) !important;
+}
+
+.comments-table .comment-replies {
+  border-left: 2px solid var(--warm-gray) !important;
+}
+
+/* ===================================================================
+  11. FRIENDS GRID
+   =================================================================== */
+.friends .person {
+  background: transparent !important;
+}
+
+.friends .person p a {
+  color: var(--text-dim) !important;
+  font-size: 6px !important;
+}
+
+.friends .person img {
+  border: 2px solid var(--panel-border) !important;
+  image-rendering: pixelated !important;
+  filter: saturate(0.6) !important;
+  transition: filter 0.2s ease;
+}
+
+.friends .person img:hover {
+  filter: saturate(1) !important;
+}
+
+/* ===================================================================
+  12. FOOTER
+   =================================================================== */
+footer,
+.footer {
+  background: var(--panel-bg) !important;
+  border-top: 2px solid var(--panel-border) !important;
+  color: var(--warm-gray) !important;
+  font-size: 6px !important;
+}
+
+/* ===================================================================
+  13. SCROLLBAR  — pixel-thin
+   =================================================================== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--deep-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--warm-gray);
+  border: 1px solid var(--panel-border);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--dust-rose);
+}
+
+/* ===================================================================
+  14. MEMPHIS GEOMETRIC DECORATIONS
+   =================================================================== */
+.blurbs .heading::after {
+  content: '';
+  display: block;
+  height: 6px;
+  margin-top: 6px;
+  background:
+    linear-gradient(135deg, var(--panel-bg) 33.33%, transparent 33.33%),
+    linear-gradient(225deg, var(--panel-bg) 33.33%, transparent 33.33%),
+    linear-gradient(135deg, transparent 66.66%, var(--muted-teal) 66.66%),
+    linear-gradient(225deg, transparent 66.66%, var(--muted-teal) 66.66%);
+  background-size: 8px 6px;
+  opacity: 0.35;
+}
+
+.profile .general-about {
+  border-left: 4px dotted var(--soft-lavender) !important;
+  border-left-color: rgba(138, 122, 158, 0.25) !important;
+}
+
+.profile .contact::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 8px solid var(--dust-rose);
+  opacity: 0.25;
+  margin: 8px auto 0;
+}
+
+/* ===================================================================
+  15. SELECTION COLOR
+   =================================================================== */
+::selection {
+  background: var(--dust-rose) !important;
+  color: var(--deep-bg) !important;
+}
+
+::-moz-selection {
+  background: var(--dust-rose) !important;
+  color: var(--deep-bg) !important;
+}
+
+/* ===================================================================
+  16. SUBTLE ANIMATION — gentle breathing glow on headings
+   =================================================================== */
+@keyframes memphis-glow {
+  0%, 100% { text-shadow: 0 0 4px rgba(158, 123, 123, 0.0); }
+  50%      { text-shadow: 0 0 4px rgba(158, 123, 123, 0.15); }
+}
+
+.heading {
+  animation: memphis-glow 6s ease-in-out infinite;
+}
+
+/* ===================================================================
+  17. RESPONSIVE
+   =================================================================== */
+@media (max-width: 768px) {
+  body {
+    font-size: 7px !important;
+  }
+
+  button, input[type="submit"], .btn {
+    font-size: 6px !important;
+    padding: 5px 8px !important;
+  }
+}
+</style>
+
+<!-- Preview-only layout styles (not part of the SpaceHey theme) -->
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  .preview-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99999;
+    background: #111;
+    color: #888;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 7px;
+    text-align: center;
+    padding: 6px;
+    border-bottom: 1px solid #333;
+    letter-spacing: 1px;
+  }
+  .preview-banner span { color: #9e7b7b; }
+
+  .page-wrapper {
+    max-width: 920px;
+    margin: 40px auto 60px;
+    padding: 0 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* SpaceHey-like structural layout */
+  .header {
+    position: relative;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header .logo { font-size: 12px; color: var(--text-bright); letter-spacing: 2px; }
+  .header nav a { margin-left: 14px; font-size: 7px !important; }
+
+  .profile {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .profile-left { display: flex; flex-direction: column; gap: 12px; }
+
+  .profile-pic {
+    width: 100%;
+    aspect-ratio: 1;
+    background: #3a3035;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  /* pixel-art placeholder avatar via box-shadow */
+  .pixel-avatar {
+    width: 1px; height: 1px;
+    background: transparent;
+    box-shadow:
+      /* head outline */
+      4px 0 0 0 var(--soft-lavender), 5px 0 0 0 var(--soft-lavender), 6px 0 0 0 var(--soft-lavender),
+      3px 1px 0 0 var(--soft-lavender), 7px 1px 0 0 var(--soft-lavender),
+      2px 2px 0 0 var(--soft-lavender), 8px 2px 0 0 var(--soft-lavender),
+      2px 3px 0 0 var(--soft-lavender), 8px 3px 0 0 var(--soft-lavender),
+      2px 4px 0 0 var(--soft-lavender), 8px 4px 0 0 var(--soft-lavender),
+      3px 5px 0 0 var(--soft-lavender), 7px 5px 0 0 var(--soft-lavender),
+      4px 6px 0 0 var(--soft-lavender), 5px 6px 0 0 var(--soft-lavender), 6px 6px 0 0 var(--soft-lavender),
+      /* eyes */
+      4px 2px 0 0 var(--accent-yellow), 6px 2px 0 0 var(--accent-yellow),
+      4px 3px 0 0 var(--deep-bg), 6px 3px 0 0 var(--deep-bg),
+      /* mouth */
+      4px 4px 0 0 var(--dust-rose), 5px 5px 0 0 var(--dust-rose), 6px 4px 0 0 var(--dust-rose),
+      /* body */
+      3px 7px 0 0 var(--muted-teal), 4px 7px 0 0 var(--muted-teal), 5px 7px 0 0 var(--muted-teal),
+      6px 7px 0 0 var(--muted-teal), 7px 7px 0 0 var(--muted-teal),
+      2px 8px 0 0 var(--muted-teal), 3px 8px 0 0 var(--muted-teal), 4px 8px 0 0 var(--muted-teal),
+      5px 8px 0 0 var(--muted-teal), 6px 8px 0 0 var(--muted-teal), 7px 8px 0 0 var(--muted-teal),
+      8px 8px 0 0 var(--muted-teal),
+      2px 9px 0 0 var(--muted-teal), 8px 9px 0 0 var(--muted-teal),
+      /* legs */
+      3px 10px 0 0 var(--warm-gray), 4px 10px 0 0 var(--warm-gray),
+      6px 10px 0 0 var(--warm-gray), 7px 10px 0 0 var(--warm-gray),
+      3px 11px 0 0 var(--warm-gray), 7px 11px 0 0 var(--warm-gray);
+    transform: scale(8);
+  }
+
+  .contact {
+    padding: 10px;
+  }
+  .contact a {
+    display: block;
+    margin: 6px 0;
+    font-size: 7px !important;
+  }
+
+  .profile-right { display: flex; flex-direction: column; gap: 16px; }
+
+  .url-info {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .url-info .display-name { font-size: 11px; color: var(--text-bright); }
+  .url-info .online-now {
+    font-size: 6px;
+    color: var(--sage);
+    border: 1px solid var(--sage);
+    padding: 3px 6px;
+    opacity: 0.7;
+  }
+
+  .mood-status {
+    padding: 8px 10px;
+    font-size: 7px;
+    color: var(--warm-gray);
+    border: 1px solid var(--panel-border);
+    background: var(--panel-bg);
+  }
+
+  .general-about {
+    padding: 14px;
+  }
+  .general-about p { margin-bottom: 10px; }
+
+  .details { margin-top: 6px; }
+  .details table { width: 100%; border-collapse: collapse; }
+  .details td { padding: 5px 8px; border-bottom: 1px solid var(--panel-border); }
+  .details td:first-child { color: var(--warm-gray); width: 100px; }
+
+  .blurbs { margin-bottom: 20px; }
+  .blurbs .section { padding: 14px; margin-top: -1px; }
+
+  .friends { margin-bottom: 20px; }
+  .friends-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    padding: 14px;
+    border: 1px solid var(--panel-border);
+    background: var(--panel-bg);
+    margin-top: -1px;
+  }
+  .friends .person { text-align: center; }
+  .friends .person img {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 6px;
+  }
+  /* pixel friend avatars */
+  .friend-pixel {
+    width: 64px; height: 64px;
+    margin: 0 auto 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .friend-pixel .dot {
+    width: 1px; height: 1px;
+    background: transparent;
+  }
+  .fp1 .dot {
+    box-shadow:
+      3px 1px 0 0 var(--dust-rose), 4px 1px 0 0 var(--dust-rose),
+      2px 2px 0 0 var(--dust-rose), 5px 2px 0 0 var(--dust-rose),
+      2px 3px 0 0 var(--dust-rose), 3px 3px 0 0 var(--accent-yellow), 4px 3px 0 0 var(--accent-yellow), 5px 3px 0 0 var(--dust-rose),
+      3px 4px 0 0 var(--dust-rose), 4px 4px 0 0 var(--dust-rose),
+      2px 5px 0 0 var(--faded-coral), 3px 5px 0 0 var(--faded-coral), 4px 5px 0 0 var(--faded-coral), 5px 5px 0 0 var(--faded-coral),
+      2px 6px 0 0 var(--faded-coral), 5px 6px 0 0 var(--faded-coral);
+    transform: scale(5);
+  }
+  .fp2 .dot {
+    box-shadow:
+      3px 0 0 0 var(--muted-teal), 4px 0 0 0 var(--muted-teal),
+      2px 1px 0 0 var(--muted-teal), 3px 1px 0 0 var(--accent-yellow), 4px 1px 0 0 var(--accent-yellow), 5px 1px 0 0 var(--muted-teal),
+      2px 2px 0 0 var(--muted-teal), 5px 2px 0 0 var(--muted-teal),
+      1px 3px 0 0 var(--sage), 2px 3px 0 0 var(--sage), 3px 3px 0 0 var(--sage), 4px 3px 0 0 var(--sage), 5px 3px 0 0 var(--sage), 6px 3px 0 0 var(--sage),
+      2px 4px 0 0 var(--sage), 5px 4px 0 0 var(--sage);
+    transform: scale(5);
+  }
+  .fp3 .dot {
+    box-shadow:
+      3px 0 0 0 var(--accent-blue), 4px 0 0 0 var(--accent-blue),
+      2px 1px 0 0 var(--accent-blue), 3px 1px 0 0 var(--accent-yellow), 4px 1px 0 0 var(--accent-yellow), 5px 1px 0 0 var(--accent-blue),
+      1px 2px 0 0 var(--accent-blue), 6px 2px 0 0 var(--accent-blue),
+      2px 3px 0 0 var(--soft-lavender), 3px 3px 0 0 var(--soft-lavender), 4px 3px 0 0 var(--soft-lavender), 5px 3px 0 0 var(--soft-lavender),
+      3px 4px 0 0 var(--soft-lavender), 4px 4px 0 0 var(--soft-lavender);
+    transform: scale(5);
+  }
+  .fp4 .dot {
+    box-shadow:
+      2px 0 0 0 var(--sage), 5px 0 0 0 var(--sage),
+      3px 1px 0 0 var(--sage), 4px 1px 0 0 var(--sage),
+      2px 2px 0 0 var(--sage), 3px 2px 0 0 var(--accent-yellow), 4px 2px 0 0 var(--accent-yellow), 5px 2px 0 0 var(--sage),
+      3px 3px 0 0 var(--sage), 4px 3px 0 0 var(--sage),
+      2px 4px 0 0 var(--accent-yellow), 3px 4px 0 0 var(--accent-yellow), 4px 4px 0 0 var(--accent-yellow), 5px 4px 0 0 var(--accent-yellow),
+      2px 5px 0 0 var(--accent-yellow), 5px 5px 0 0 var(--accent-yellow);
+    transform: scale(5);
+  }
+
+  .comments { margin-bottom: 20px; }
+  .comments-list {
+    padding: 14px;
+    border: 1px solid var(--panel-border);
+    background: var(--panel-bg);
+    margin-top: -1px;
+  }
+  .comment-item {
+    display: flex;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--panel-border);
+  }
+  .comment-item:last-child { border-bottom: none; }
+  .comment-avatar {
+    width: 40px; height: 40px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--panel-border);
+  }
+  .comment-avatar .dot {
+    width: 1px; height: 1px;
+    background: transparent;
+  }
+  .ca1 .dot { box-shadow: 2px 1px 0 0 var(--faded-coral), 3px 0 0 0 var(--faded-coral), 2px 2px 0 0 var(--faded-coral), 3px 2px 0 0 var(--faded-coral); transform: scale(5); }
+  .ca2 .dot { box-shadow: 2px 0 0 0 var(--sage), 3px 1px 0 0 var(--sage), 2px 2px 0 0 var(--sage), 1px 1px 0 0 var(--sage); transform: scale(5); }
+  .comment-body { flex: 1; }
+  .comment-body .name { color: var(--link-color); margin-bottom: 4px; }
+  .comment-body .text { color: var(--text-dim); }
+  .comment-body .time { color: var(--warm-gray); font-size: 6px; margin-top: 4px; }
+
+  .footer {
+    text-align: center;
+    padding: 16px;
+    margin-top: 30px;
+  }
+
+  @media (max-width: 768px) {
+    .profile { grid-template-columns: 1fr; }
+    .friends-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+
+<body>
+
+<div class="preview-banner">
+  <span>MEMPHIS TWILIGHT</span> — spacehey theme preview — copy the CSS from &lt;style id="spacehey-theme"&gt;
+</div>
+
+<!-- === HEADER / NAV === -->
+<div class="header">
+  <div class="logo">SpaceHey</div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Browse</a>
+    <a href="#">Search</a>
+    <a href="#">Forum</a>
+    <a href="#">Bulletins</a>
+    <a href="#">Blog</a>
+  </nav>
+</div>
+
+<div class="page-wrapper">
+
+<!-- === PROFILE === -->
+<div class="profile">
+  <div class="profile-left">
+    <div class="profile-pic">
+      <div class="pixel-avatar"></div>
+    </div>
+    <div class="contact">
+      <div class="heading">Contacting</div>
+      <a href="#">Send Message</a>
+      <a href="#">Add to Friends</a>
+      <a href="#">Block User</a>
+      <a href="#">Add to Favorites</a>
+    </div>
+  </div>
+
+  <div class="profile-right">
+    <div class="url-info">
+      <span class="display-name">twilight_creature</span>
+      <span class="online-now">ONLINE</span>
+    </div>
+
+    <div class="mood-status">
+      Mood: contemplating geometric shapes in the dark
+    </div>
+
+    <div class="general-about">
+      <p>
+        i collect quiet sounds and muted colors.
+        somewhere between a Sottsass lamp and a
+        rainy CRT screen. the memphis group knew
+        that geometry has feelings. i believe them.
+      </p>
+      <div class="details">
+        <table>
+          <tr><td>Status</td><td>drifting through pixels</td></tr>
+          <tr><td>Here for</td><td>quiet aesthetics</td></tr>
+          <tr><td>Hometown</td><td>Memphis, Milan, 1987</td></tr>
+          <tr><td>Orientation</td><td>postmodern</td></tr>
+          <tr><td>Body Type</td><td>bitmap</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- === BLURBS === -->
+<div class="blurbs">
+  <div class="heading">twilight_creature's Blurbs</div>
+  <div class="section">
+    <h4 style="color: var(--dust-rose); margin-bottom: 8px;">About me:</h4>
+    <p>
+      late nights staring at half-finished drawings of
+      triangles that don't connect. i think ettore
+      sottsass would have liked pixel art. memphis
+      design was always about breaking rules — making
+      serious things feel playful, making playful things
+      feel like they matter. that's what i try to do
+      with my little corner of the internet.
+    </p>
+    <br>
+    <h4 style="color: var(--muted-teal); margin-bottom: 8px;">Who I'd like to meet:</h4>
+    <p>
+      anyone who still thinks a squiggle is a valid
+      architectural element. people who arrange their
+      desktop icons by color. creatures of the dusk.
+    </p>
+  </div>
+</div>
+
+<!-- === FRIENDS === -->
+<div class="friends">
+  <div class="heading">twilight_creature's Friends (4)</div>
+  <div class="friends-grid">
+    <div class="person">
+      <div class="friend-pixel fp1"><div class="dot"></div></div>
+      <p><a href="#">dusty_rosa</a></p>
+    </div>
+    <div class="person">
+      <div class="friend-pixel fp2"><div class="dot"></div></div>
+      <p><a href="#">teal_static</a></p>
+    </div>
+    <div class="person">
+      <div class="friend-pixel fp3"><div class="dot"></div></div>
+      <p><a href="#">neon_fade</a></p>
+    </div>
+    <div class="person">
+      <div class="friend-pixel fp4"><div class="dot"></div></div>
+      <p><a href="#">sage_ghost</a></p>
+    </div>
+  </div>
+</div>
+
+<!-- === COMMENTS === -->
+<div class="comments">
+  <div class="heading">twilight_creature's Comments</div>
+  <div class="comments-list">
+    <div class="comment-item">
+      <div class="comment-avatar ca1"><div class="dot"></div></div>
+      <div class="comment-body">
+        <div class="name">dusty_rosa</div>
+        <div class="text">this profile feels like being inside a sottsass bookshelf at 2am. love it.</div>
+        <div class="time">12 hours ago</div>
+      </div>
+    </div>
+    <div class="comment-item">
+      <div class="comment-avatar ca2"><div class="dot"></div></div>
+      <div class="comment-body">
+        <div class="name">sage_ghost</div>
+        <div class="text">the little falling creatures... are they waving at me? i'm waving back.</div>
+        <div class="time">2 days ago</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- === FOOTER === -->
+<div class="footer">
+  &copy; SpaceHey — Memphis Twilight Theme
+</div>
+
+</div><!-- /page-wrapper -->
+</body>
+</html>
